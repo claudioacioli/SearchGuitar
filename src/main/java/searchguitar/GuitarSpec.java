@@ -1,6 +1,6 @@
 package searchguitar;
 
-public class GuitarSpec{
+class GuitarSpec{
 
     private String model;
     private Builder builder;
@@ -9,7 +9,7 @@ public class GuitarSpec{
     private Wood topWood;
     private int numStrings;
 
-    public GuitarSpec(Builder builder,
+    GuitarSpec(Builder builder,
                       String model,
                       Type type,
                       int numStrings,
@@ -23,31 +23,31 @@ public class GuitarSpec{
         this.topWood = topWood;
     }
 
-    public Builder getBuilder() {
+    Builder getBuilder() {
         return builder;
     }
 
-    public String getModel() {
+    String getModel() {
         return model;
     }
 
-    public Type getType() {
+    Type getType() {
         return type;
     }
 
-    public Wood getBackWood() {
+    Wood getBackWood() {
         return backWood;
     }
 
-    public Wood getTopWood() {
+    Wood getTopWood() {
         return topWood;
     }
 
-    public int getNumStrings() {
+    int getNumStrings() {
         return numStrings;
     }
 
-    public boolean matches(GuitarSpec guitarSpec){
+    boolean matches(GuitarSpec guitarSpec){
 
         if(this.getBuilder() != guitarSpec.getBuilder())
             return false;
@@ -65,10 +65,7 @@ public class GuitarSpec{
         if(this.getBackWood() != guitarSpec.getBackWood())
             return false;
 
-        if(this.getNumStrings() != guitarSpec.getNumStrings())
-            return false;
-
-        return true;
+        return this.getNumStrings() == guitarSpec.getNumStrings();
     }
 
 }

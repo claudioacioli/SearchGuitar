@@ -2,17 +2,16 @@ package searchguitar;
 
 import java.util.List;
 import java.util.LinkedList;
-import java.util.Iterator;
 
 public class Inventory{
 
     private List<Guitar> guitars;
 
-    public Inventory(){
+    Inventory(){
         guitars = new LinkedList<>();
     }
 
-    public void addGuitar(
+    void addGuitar(
             String serialNumber,
             double price,
             GuitarSpec spec){
@@ -21,21 +20,17 @@ public class Inventory{
     }
 
     public Guitar getGuitar(String serialNumber){
-        for (Iterator i = guitars.iterator(); i.hasNext();){
-            Guitar guitar = (Guitar) i.next();
+        for(Guitar guitar : guitars)
             if(guitar.getSerialNumber().equals(serialNumber))
                 return guitar;
-        }
         return null;
     }
 
-    public List search(GuitarSpec searchSpec){
+    List<Guitar> search(GuitarSpec searchSpec){
         List<Guitar> matchingGuitars = new LinkedList<>();
-        for(Iterator i = guitars.iterator(); i.hasNext();){
-            Guitar guitar = (Guitar) i.next();
+        for(Guitar guitar : guitars)
             if(guitar.getSpec().matches(searchSpec))
                 matchingGuitars.add(guitar);
-        }
         return matchingGuitars;
     }
 

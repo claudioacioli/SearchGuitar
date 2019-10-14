@@ -1,11 +1,11 @@
 package searchguitar;
 
-public class Guitar{
+class Guitar{
     private String serialNumber;
     private double price;
     private GuitarSpec spec;
 
-    public Guitar(
+    Guitar(
             String serialNumber,
             double price,
             GuitarSpec spec){
@@ -14,19 +14,19 @@ public class Guitar{
         this.spec = spec;
     }
 
-    public String getSerialNumber(){
+    String getSerialNumber(){
         return this.serialNumber;
     }
 
-    public double getPrice() {
+    double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    void setPrice(double price) {
         this.price = price;
     }
 
-    public GuitarSpec getSpec(){
+    GuitarSpec getSpec(){
         return this.spec;
     }
 
