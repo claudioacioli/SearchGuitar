@@ -1,5 +1,8 @@
 package searchguitar;
 
+import java.util.Iterator;
+import java.util.List;
+
 public class FindGuitarTester {
 
     public static void main(String[] args) {
@@ -17,14 +20,17 @@ public class FindGuitarTester {
                 Wood.ALDER
         );
 
-        Guitar guitar = inventory.search(whatErinLikes);
-        if (guitar != null)
-            System.out.println("Erin, you might like this " +
-                    guitar.getBuilder() + " " + guitar.getModel() +  " " +
-                    guitar.getType() + " guitar:\n   " +
-                    guitar.getBackWood() + " back and sides,\n   " +
-                    guitar.getTopWood() + " top.\nYou can have it for only $" +
-                    guitar.getPrice() + "!");
+        List<Guitar> guitars = inventory.search(whatErinLikes);
+        if(!guitars.isEmpty())
+            for(Iterator i = guitars.iterator(); i.hasNext();) {
+                Guitar guitar = (Guitar) i.next();
+                System.out.println("Erin, you might like this " +
+                        guitar.getBuilder() + " " + guitar.getModel() + " " +
+                        guitar.getType() + " guitar:\n   " +
+                        guitar.getBackWood() + " back and sides,\n   " +
+                        guitar.getTopWood() + " top.\nYou can have it for only $" +
+                        guitar.getPrice() + "!");
+            }
         else
             System.out.println("Sorry, Erin, we have nothing for you.");
     }
