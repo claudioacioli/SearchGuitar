@@ -20,19 +20,21 @@ public class FindGuitarTester {
                 Wood.ALDER
         );
 
-        List<Guitar> guitars = inventory.search(whatErinLikes);
-        if(!guitars.isEmpty())
+        List guitars = inventory.search(whatErinLikes);
+        if(!guitars.isEmpty()){
+            System.out.println("Erin, you might like these guitars: ");
             for(Iterator i = guitars.iterator(); i.hasNext();) {
                 Guitar guitar = (Guitar) i.next();
-                System.out.println("Erin, you might like this " +
+                System.out.println("We have a " +
                         guitar.getBuilder() + " " + guitar.getModel() + " " +
                         guitar.getType() + " guitar:\n   " +
                         guitar.getBackWood() + " back and sides,\n   " +
                         guitar.getTopWood() + " top.\nYou can have it for only $" +
                         guitar.getPrice() + "!");
             }
-        else
+        }else {
             System.out.println("Sorry, Erin, we have nothing for you.");
+        }
     }
 
     private static void initializeInventory(Inventory inventory) {

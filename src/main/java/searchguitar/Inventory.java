@@ -33,7 +33,7 @@ public class Inventory{
         return null;
     }
 
-    public List<Guitar> search(Guitar searchGuitar){
+    public List search(Guitar searchGuitar){
         List<Guitar> matchingGuitars = new LinkedList<>();
         for(Iterator i = guitars.iterator(); i.hasNext();){
             Guitar guitar = (Guitar) i.next();
