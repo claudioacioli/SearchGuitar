@@ -46,4 +46,29 @@ public class GuitarSpec{
     public int getNumStrings() {
         return numStrings;
     }
+
+    public boolean matches(GuitarSpec guitarSpec){
+
+        if(this.getBuilder() != guitarSpec.getBuilder())
+            return false;
+
+        String model = this.getModel().toLowerCase();
+        if((model != null) && (!model.equals("")) && (!model.equals(guitarSpec.getModel().toLowerCase())))
+            return false;
+
+        if(this.getType() != guitarSpec.getType())
+            return false;
+
+        if(this.getTopWood() != guitarSpec.getTopWood())
+            return false;
+
+        if(this.getBackWood() != guitarSpec.getBackWood())
+            return false;
+
+        if(this.getNumStrings() != guitarSpec.getNumStrings())
+            return false;
+
+        return true;
+    }
+
 }
