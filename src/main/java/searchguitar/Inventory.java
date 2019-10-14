@@ -33,7 +33,8 @@ public class Inventory{
         return null;
     }
 
-    public Guitar search(Guitar searchGuitar){
+    public List<Guitar> search(Guitar searchGuitar){
+        List<Guitar> matchingGuitars = new LinkedList<>();
         for(Iterator i = guitars.iterator(); i.hasNext();){
             Guitar guitar = (Guitar) i.next();
 
@@ -53,9 +54,9 @@ public class Inventory{
             if(guitar.getBackWood() != searchGuitar.getBackWood())
                 continue;
 
-            return guitar;
+            matchingGuitars.add(guitar);
         }
-        return null;
+        return matchingGuitars;
     }
 
 }
