@@ -30,7 +30,7 @@ public class Guitar{
         this.price = price;
     }
 
-    public GuitarSpec getGuitarSpec(){
+    public GuitarSpec getSpec(){
         return this.spec;
     }
 

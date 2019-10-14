@@ -23,7 +23,7 @@ public class FindGuitarTester {
             System.out.println("Erin, you might like these guitars: ");
             for(Iterator i = guitars.iterator(); i.hasNext();) {
                 Guitar guitar = (Guitar) i.next();
-                GuitarSpec guitarSpec = guitar.getGuitarSpec();
+                GuitarSpec guitarSpec = guitar.getSpec();
                 System.out.println("We have a " +
                         guitarSpec.getBuilder() + " " + guitarSpec.getModel() + " " +
                         guitarSpec.getType() + " guitar:\n   " +
