@@ -37,25 +37,27 @@ public class Inventory{
         for(Iterator i = guitars.iterator(); i.hasNext();){
             Guitar guitar = (Guitar) i.next();
 
-            String builder = searchGuitar.getBuilder();
-            if((builder != null) && (!builder.equals("")) && (!builder.equals(guitar.getBuilder())))
+            String builder = searchGuitar.getBuilder().toLowerCase();
+            if((builder != null) && (!builder.equals("")) && (!builder.equals(guitar.getBuilder().toLowerCase())))
                 continue;
 
-            String model = searchGuitar.getModel();
-            if((model != null) && (!model.equals("")) && (!model.equals(guitar.getModel())))
+            String model = searchGuitar.getModel().toLowerCase();
+            if((model != null) && (!model.equals("")) && (!model.equals(guitar.getModel().toLowerCase())))
                 continue;
 
-            String type = searchGuitar.getType();
-            if((type != null) && (!type.equals("")) && (!type.equals(guitar.getType())))
+            String type = searchGuitar.getType().toLowerCase();
+            if((type != null) && (!type.equals("")) && (!type.equals(guitar.getType().toLowerCase())))
                 continue;
 
-            String topWood = searchGuitar.getTopWood();
-            if((topWood != null) && (!topWood.equals("")) && (!topWood.equals(guitar.getTopWood())))
+            String topWood = searchGuitar.getTopWood().toLowerCase();
+            if((topWood != null) && (!topWood.equals("")) && (!topWood.equals(guitar.getTopWood().toLowerCase())))
                 continue;
 
-            String backWood = searchGuitar.getBackWood();
-            if((backWood != null) && (!backWood.equals("")) && (!backWood.equals(guitar.getBackWood())))
+            String backWood = searchGuitar.getBackWood().toLowerCase();
+            if((backWood != null) && (!backWood.equals("")) && (!backWood.equals(guitar.getBackWood().toLowerCase())))
                 continue;
+
+            return guitar;
         }
         return null;
     }
